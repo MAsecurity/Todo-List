@@ -12,15 +12,30 @@
 .navbar{
   grid-column: 1 / -1;
   grid-row-start: 1;
-  background-color: black;
+  background-color: #ddd6fe;
+  box-shadow: 0px 2px 3px #9ca3af;
+  z-index: 10;
 }
 .sidebar{
   grid-column-start: 1;
   grid-row-start: 2;
-  background-color: blue;
+  background-color:#7c3aed;
+
 }
 .main{
   grid-column-start: 2;
   grid-row-start: 2;
-  background-color: red;
+  background-color:#f5f3ff ;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.current-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70%;
+  min-width: 70%;
+}
+
