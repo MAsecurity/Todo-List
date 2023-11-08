@@ -25,9 +25,50 @@ function getRenderDefault(){
   const navBarRight = document.createElement("div");
   navBarRight.classList.add("nav-content-right");
   const navBarTitle = document.createElement("div");
-  navBarTitle.textContent = "Todo List"
+  navBarTitle.textContent = "Todo List";
+  //Sidebar section
   const sideBar = document.createElement("div");
   sideBar.classList.add("sidebar");
+  const sideBarTitleContainer = document.createElement("div");
+  sideBarTitleContainer.classList.add("sidebar-title-container");
+  const sideBarTitle = document.createElement("span");
+  sideBarTitle.textContent = "Todo List Dashboard";
+  const sideBarTitleIcon = document.createElement("span");
+  sideBarTitleIcon.classList.add("material-symbols-outlined");
+  sideBarTitleIcon.textContent = "dashboard";
+  const sideBarFields = document.createElement("div");
+  sideBarFields.classList.add("sidebar-fields");
+  const sideBarInbox = document.createElement("div");
+  sideBarInbox.classList.add("sidebar-inbox")
+  const sideBarInboxTitle = document.createElement("span");
+  sideBarInboxTitle.textContent = "Inbox";
+  const sideBarInboxIcon = document.createElement("span");
+  sideBarInboxIcon.textContent= "inbox";
+  sideBarInboxIcon.classList.add("material-symbols-outlined"); 
+  const sideBarInboxStatus = document.createElement("span");
+  sideBarInboxStatus.classList.add("sidebar-inbox-status");
+  sideBarInboxStatus.textContent = "0";
+  const sideBarToday = document.createElement("div");
+  sideBarToday.classList.add("sidebar-today");
+  const sideBarTodayTitle = document.createElement("span");
+  sideBarTodayTitle.textContent = "Today";
+  const sideBarTodayIcon  = document.createElement("span");
+  sideBarTodayIcon.classList.add("material-symbols-outlined");
+  sideBarTodayIcon.textContent = "today";
+  const sideBarTodayStatus = document.createElement("span");
+  sideBarTodayStatus.classList.add("sidebar-today-status");
+  sideBarTodayStatus.textContent = "0";
+  const sideBarUpcomming = document.createElement("div");
+  sideBarUpcomming.classList.add("sidebar-upcomming");
+  const sideBarUpcommingTitle = document.createElement("span");
+  sideBarUpcommingTitle.textContent = "Upcomming";
+  const sideBarUpcommingIcon = document.createElement("span");
+  sideBarUpcommingIcon.textContent = "calendar_month";
+  sideBarUpcommingIcon.classList.add("material-symbols-outlined");
+  const sideBarUpcommingStatus = document.createElement("span");
+  sideBarUpcommingStatus.textContent = "0";
+  sideBarUpcommingStatus.classList.add("sidebar-upcomming-status")
+  // Main content section
   const mainContent = document.createElement("div");
   mainContent.classList.add("main");
   const mainContainerImg = document.createElement("div");
@@ -38,6 +79,7 @@ function getRenderDefault(){
   // Add DOM elements
   document.head.appendChild(linkMaterialIcons)
   document.body.appendChild(contentElement);
+  // Adding navbar
   contentElement.appendChild(navBar);
   navBar.appendChild(navBarLeft);
   navBarLeft.appendChild(searchBar);
@@ -45,7 +87,24 @@ function getRenderDefault(){
   searchBarBtn.appendChild(searchIconImg)
   navBar.appendChild(navBarRight);
   navBarRight.appendChild(navBarTitle);
+  // Adding sidebar
   contentElement.appendChild(sideBar);
+  sideBar.appendChild(sideBarTitleContainer);
+  sideBarTitleContainer.appendChild(sideBarTitleIcon);
+  sideBarTitleContainer.appendChild(sideBarTitle);
+  sideBar.appendChild(sideBarFields);
+  sideBarFields.appendChild(sideBarInbox);
+  sideBarInbox.appendChild(sideBarInboxIcon);
+  sideBarInbox.appendChild(sideBarInboxTitle);
+  sideBarInbox.appendChild(sideBarInboxStatus);
+  sideBarFields.appendChild(sideBarToday);
+  sideBarToday.appendChild(sideBarTodayIcon);
+  sideBarToday.appendChild(sideBarTodayTitle);
+  sideBarToday.appendChild(sideBarTodayStatus);
+  sideBarFields.appendChild(sideBarUpcomming);
+  sideBarUpcomming.appendChild(sideBarUpcommingIcon);
+  sideBarUpcomming.appendChild(sideBarUpcommingTitle);
+  sideBarUpcomming.appendChild(sideBarUpcommingStatus);
   contentElement.appendChild(mainContent);
   mainContent.appendChild(mainContainerImg);
   mainContainerImg.appendChild(mainActualImg);
