@@ -81,6 +81,14 @@ function getRenderDefault(){
   // Main content section
   const mainContent = document.createElement("div");
   mainContent.classList.add("main");
+  const mainCreateTask = document.createElement("div");
+  mainCreateTask.classList.add("create-task");
+  const mainCreateTaskTitle =  document.createElement("span");
+  mainCreateTaskTitle.classList.add("create-task-title");
+  mainCreateTaskTitle.textContent = "Create a task here..."
+  const mainCreateTaskIcon = document.createElement("span");
+  mainCreateTaskIcon.classList.add("material-symbols-outlined");
+  mainCreateTaskIcon.textContent = "add_circle";
   const mainChangingContent = document.createElement("div");
   mainChangingContent.classList.add("main-changing-content");
   const mainContainerImg = document.createElement("div");
@@ -123,6 +131,9 @@ function getRenderDefault(){
   sideBarProjects.appendChild(sideBarProjectsStatus);
   // Adding Main content
   contentElement.appendChild(mainContent);
+  mainContent.appendChild(mainCreateTask);
+  mainCreateTask.appendChild(mainCreateTaskTitle);
+  mainCreateTask.appendChild(mainCreateTaskIcon);
   mainContent.appendChild(mainChangingContent);
   mainChangingContent.appendChild(mainContainerImg);
   mainContainerImg.appendChild(mainActualImg);
