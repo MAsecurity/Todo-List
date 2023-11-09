@@ -67,10 +67,22 @@ function getRenderDefault(){
   sideBarUpcommingIcon.classList.add("material-symbols-outlined");
   const sideBarUpcommingStatus = document.createElement("span");
   sideBarUpcommingStatus.textContent = "0";
-  sideBarUpcommingStatus.classList.add("sidebar-upcomming-status")
+  sideBarUpcommingStatus.classList.add("sidebar-upcomming-status");
+  const sideBarProjects = document.createElement("div");
+  sideBarProjects.classList.add("sidebar-projects");
+  const sideBarProjectsTitle = document.createElement("span");
+  sideBarProjectsTitle.textContent = "Projects";
+  const sideBarProjectsIcon = document.createElement("span");
+  sideBarProjectsIcon.classList.add("material-symbols-outlined");
+  sideBarProjectsIcon.textContent = "expand_circle_right";
+  const sideBarProjectsStatus = document.createElement("span");
+  sideBarProjectsStatus.textContent = "0";
+  sideBarProjectsStatus.classList.add("sidebar-projects-status")
   // Main content section
   const mainContent = document.createElement("div");
   mainContent.classList.add("main");
+  const mainChangingContent = document.createElement("div");
+  mainChangingContent.classList.add("main-changing-content");
   const mainContainerImg = document.createElement("div");
   mainContainerImg.classList.add("main-container-img");
   const mainActualImg = document.createElement("img");
@@ -105,8 +117,14 @@ function getRenderDefault(){
   sideBarUpcomming.appendChild(sideBarUpcommingIcon);
   sideBarUpcomming.appendChild(sideBarUpcommingTitle);
   sideBarUpcomming.appendChild(sideBarUpcommingStatus);
+  sideBar.appendChild(sideBarProjects);
+  sideBarProjects.appendChild(sideBarProjectsIcon);
+  sideBarProjects.appendChild(sideBarProjectsTitle);
+  sideBarProjects.appendChild(sideBarProjectsStatus);
+  // Adding Main content
   contentElement.appendChild(mainContent);
-  mainContent.appendChild(mainContainerImg);
+  mainContent.appendChild(mainChangingContent);
+  mainChangingContent.appendChild(mainContainerImg);
   mainContainerImg.appendChild(mainActualImg);
 
 };

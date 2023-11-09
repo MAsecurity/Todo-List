@@ -8,6 +8,10 @@
 .material-symbols-outlined{
   color: #f5f3ff;
 }
+.sidebar-projects .material-symbols-outlined:hover{
+  color: rgb(74, 240, 74)
+}
+
 #content{
   display: grid;
   min-height: 100vh;
@@ -90,12 +94,13 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 4fr;
+  gap: 10%;
 }
 .sidebar-title-container{
   display: flex;
 }
 
-.sidebar-title-container,.sidebar-inbox, .sidebar-today, .sidebar-upcomming{
+.sidebar-title-container,.sidebar-inbox, .sidebar-today, .sidebar-upcomming,.sidebar-projects{
   color: white;
   font-weight: bold;
   gap: 5px;
@@ -103,7 +108,7 @@
 .sidebar-title-container span{
   font-size: 3rem;
 }
-.sidebar-inbox span, .sidebar-today span, .sidebar-upcomming span {
+.sidebar-inbox span, .sidebar-today span, .sidebar-upcomming span , .sidebar-projects span{
   font-size: 2rem;
 }
 .sidebar-fields{
@@ -113,28 +118,37 @@
 }
 
 .sidebar-inbox, .sidebar-today, .sidebar-upcomming{
+  align-items: center;
+}
+.sidebar-inbox, .sidebar-today, .sidebar-upcomming,.sidebar-projects{
   display: grid;
   grid-template-columns: 1fr 1fr 5fr;
   gap: 10px;
   cursor: pointer;
-  align-items: center;
 }
-.sidebar-inbox:hover, .sidebar-today:hover,.sidebar-upcomming:hover{
+.sidebar-inbox:hover, .sidebar-today:hover,.sidebar-upcomming:hover,.sidebar-projects:hover{
   opacity: 0.8;
 }
-.sidebar-inbox-status,.sidebar-today-status,.sidebar-upcomming-status{
+.sidebar-inbox-status,.sidebar-today-status,.sidebar-upcomming-status, .sidebar-projects-status{
   opacity: 0.6;
   justify-self: end;
 }
+
+
+
 
 .main{
   grid-column-start: 2;
   grid-row-start: 2;
   background-color:#f5f3ff ;
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr;
+}
+
+.main-changing-content{
+  grid-row-start: 2;
 }
 .main-container-img {
   display: flex;
