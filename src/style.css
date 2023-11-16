@@ -147,7 +147,7 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   align-items: center;
-  border-bottom: 2px solid #9ca3af;
+  border-bottom: 2px solid #7c3aed;
   gap: 10px;
 }
 .main .create-task span{
@@ -169,6 +169,64 @@
 }
 .main-changing-content{
   grid-row-start: 2;
+}
+.dialog-container{
+  position: relative;
+}
+#dialog {
+  width: 550px;
+  height: 550px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f5f3ff;
+  border: 4px solid #7c3aed;
+  outline: none;
+  border-radius: 5px;
+  margin-top: 6%;
+}
+
+#dialog form {
+  padding: 10px 10px 30px 10px;
+  font-size: 16px;
+
+}
+
+.div-for-label{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+input[type="text"], input[type="textarea"]{
+  width: 100%;
+  height: 50px;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: black;
+  border: 2px solid #7c3aed;
+}
+input[type="text"]:focus{
+  border: 2px solid #4995ec;
+}
+input[type="text"]:invalid{
+  border: 2px solid red;
+}
+.required-status{
+  width: 50px;
+  height: 30px;
+  font-size: 10px !important;
+  background-color: #7c3aed;
+  border-radius: 3px;
+  color: #f5f3ff;
+  font-weight: bold;
+  justify-self: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main-container-img {
   display: flex;

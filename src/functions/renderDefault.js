@@ -87,6 +87,9 @@ function getRenderDefault(){
   mainCreateTaskTitle.classList.add("create-task-title");
   mainCreateTaskTitle.textContent = "Create a task here..."
   const mainCreateTaskIcon = document.createElement("span");
+  Object.assign(mainCreateTaskIcon,{
+    id: "createTodo",
+  })
   mainCreateTaskIcon.classList.add("material-symbols-outlined");
   mainCreateTaskIcon.textContent = "add_circle";
   const mainChangingContent = document.createElement("div");
