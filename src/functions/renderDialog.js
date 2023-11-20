@@ -16,7 +16,7 @@ function dialog(){
   divSectionOneForLabel.classList.add("div-for-label");
   const titleLabel = document.createElement("label");
   titleLabel.setAttribute("for","title");
-  titleLabel.textContent = "Title";
+  titleLabel.textContent = "Title:";
   titleLabel.style.cssText = "font-weight: bold; ";
   const requriedStatus = document.createElement("span");
   requriedStatus.textContent = "Required";
@@ -32,7 +32,7 @@ function dialog(){
   divsectionTwoForLabel.classList.add("div-for-label");
   const descriptionLabel = document.createElement("label");
   descriptionLabel.setAttribute("for","description");
-  descriptionLabel.textContent = "Description";
+  descriptionLabel.textContent = "Description:";
   descriptionLabel.style.cssText = "font-weight: bold;"
   const descriptionInput = document.createElement("input");
   Object.assign(descriptionInput,{
@@ -43,6 +43,65 @@ function dialog(){
   const requriedStatus2 = document.createElement("span");
   requriedStatus2.textContent = "Required";
   requriedStatus2.classList.add("required-status");
+  const divSectionThree = document.createElement("div");
+  const divSectionThreeForLabel = document.createElement("div");
+  divSectionThreeForLabel.classList.add("div-for-label");
+  const dueDateLabel = document.createElement("label");
+  dueDateLabel.setAttribute("for","date");
+  dueDateLabel.textContent = "Due Date:"
+  dueDateLabel.style.cssText = "font-weight: bold;";
+  const dueDate = document.createElement("input");
+  Object.assign(dueDate,{
+    type: "date",
+    id: "date",
+    required: "required"
+  });
+  const requriedStatus3 = document.createElement("span");
+  requriedStatus3.textContent = "Required";
+  requriedStatus3.classList.add("required-status");
+  // section4
+  const fieldsetPriority = document.createElement("fieldset");
+  const legendPriority = document.createElement("legend");
+  legendPriority.textContent = "Priority:";
+  // low
+  const divLowPriority = document.createElement("div");
+  const lowPriority = document.createElement("input");
+  Object.assign(lowPriority,{
+    type: "radio",
+    name: "radio",
+    value: "low",
+    id: "low",
+    checked: "checked"
+  });
+  const lowPriorityLabel = document.createElement("label");
+  lowPriorityLabel.textContent = "Low";
+  lowPriorityLabel.setAttribute("for", "low");
+  // medium
+  const divMediumPriority = document.createElement("div");
+  const mediumPriority = document.createElement("input");
+  Object.assign(mediumPriority,{
+    type: "radio",
+    name: "radio",
+    value: "medium",
+    id: "medium"
+  });
+  const mediumPriorityLabel = document.createElement("label");
+  mediumPriorityLabel.textContent = "Medium";
+  mediumPriorityLabel.setAttribute("for", "medium");
+  // high
+  const divHighPriority = document.createElement("div");
+  const highPriority = document.createElement("input");
+  Object.assign(highPriority,{
+    type: "radio",
+    name: "radio",
+    value: "high",
+    id: "high"
+  });
+  const highPriorityLabel = document.createElement("label");
+  highPriorityLabel.textContent = "High";
+  lowPriorityLabel.setAttribute("for", "high");
+
+  // Adding Elements to the DOM
   content.appendChild(parentContainer);
   parentContainer.appendChild(dialogElement)
   dialogElement.appendChild(headingElement);
@@ -59,7 +118,24 @@ function dialog(){
   divsectionTwoForLabel.appendChild(descriptionLabel);
   divsectionTwoForLabel.appendChild(requriedStatus2);
   divSectionTwo.appendChild(descriptionInput);
-
+  // section3
+  formElement.appendChild(divSectionThree);
+  divSectionThree.appendChild(divSectionThreeForLabel);
+  divSectionThreeForLabel.appendChild(dueDateLabel);
+  divSectionThreeForLabel.appendChild(requriedStatus3)
+  divSectionThree.appendChild(dueDate);
+  // section4
+  formElement.appendChild(fieldsetPriority);
+  fieldsetPriority.appendChild(legendPriority);
+  fieldsetPriority.appendChild(divLowPriority);
+  divLowPriority.appendChild(lowPriority);
+  divLowPriority.appendChild(lowPriorityLabel);
+  fieldsetPriority.appendChild(divMediumPriority);
+  divMediumPriority.appendChild(mediumPriority);
+  divMediumPriority.appendChild(mediumPriorityLabel);
+  fieldsetPriority.appendChild(divHighPriority);
+  divHighPriority.appendChild(highPriority);
+  divHighPriority.appendChild(highPriorityLabel);
   showDialog();
   
 }
