@@ -1,4 +1,5 @@
 import { clearContents } from "./clear";
+import { closeDialog } from "./closeDialog";
 import { showDialog } from "./showDialog";
 function dialog(){
   clearContents();
@@ -11,6 +12,7 @@ function dialog(){
   headingElement.textContent = "Todo List";
   headingElement.style.cssText = "font-weight:bold; font-size:30px; text-decoration:underline; text-align:center;";
   const formElement = document.createElement("form");
+  // section1
   const divSectionOne = document.createElement("div");
   const divSectionOneForLabel = document.createElement("div");
   divSectionOneForLabel.classList.add("div-for-label");
@@ -27,6 +29,7 @@ function dialog(){
     id: "title",
     required: "required"
   });
+  // section2
   const divSectionTwo = document.createElement("div");
   const divsectionTwoForLabel = document.createElement("div");
   divsectionTwoForLabel.classList.add("div-for-label");
@@ -34,15 +37,15 @@ function dialog(){
   descriptionLabel.setAttribute("for","description");
   descriptionLabel.textContent = "Description:";
   descriptionLabel.style.cssText = "font-weight: bold;"
-  const descriptionInput = document.createElement("input");
+  const descriptionInput = document.createElement("textarea");
   Object.assign(descriptionInput,{
-    type: "text",
     id: "description",
     required: "required"
   });
   const requriedStatus2 = document.createElement("span");
   requriedStatus2.textContent = "Required";
   requriedStatus2.classList.add("required-status");
+  // section3
   const divSectionThree = document.createElement("div");
   const divSectionThreeForLabel = document.createElement("div");
   divSectionThreeForLabel.classList.add("div-for-label");
@@ -100,6 +103,21 @@ function dialog(){
   const highPriorityLabel = document.createElement("label");
   highPriorityLabel.textContent = "High";
   lowPriorityLabel.setAttribute("for", "high");
+  // section5
+  const buttons = document.createElement("div");
+  buttons.classList.add("buttonsflex");
+  const cancelBtn = document.createElement("button");
+  Object.assign(cancelBtn,{
+    id: "cancel",
+  })
+  cancelBtn.classList.add("cancelbtn");
+  cancelBtn.textContent = "Cancel";
+  const submitBtn = document.createElement("button");
+  Object.assign(submitBtn,{
+    id: "submit"
+  })
+  submitBtn.classList.add("submitbtn")
+  submitBtn.textContent = "Create";
 
   // Adding Elements to the DOM
   content.appendChild(parentContainer);
@@ -136,7 +154,10 @@ function dialog(){
   fieldsetPriority.appendChild(divHighPriority);
   divHighPriority.appendChild(highPriority);
   divHighPriority.appendChild(highPriorityLabel);
+  formElement.appendChild(buttons);
+  buttons.appendChild(cancelBtn);
+  buttons.appendChild(submitBtn);
   showDialog();
-  
-}
+  closeDialog();
+};
 export {dialog}
