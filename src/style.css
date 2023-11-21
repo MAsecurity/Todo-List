@@ -209,6 +209,9 @@ input[type="text"], input[type="date"], textarea{
   color: black;
   border: 2px solid #7c3aed;
 }
+textarea{
+  height: 87px;
+}
 input[type="text"]:focus, input[type="date"]:focus, textarea:focus{
   border: 2px solid #4995ec;
 }
