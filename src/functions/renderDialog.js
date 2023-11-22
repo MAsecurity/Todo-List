@@ -1,6 +1,7 @@
 import { clearContents } from "./clear";
 import { closeDialog } from "./closeDialog";
 import { showDialog } from "./showDialog";
+import { addTodo } from "./addTodo";
 function dialog(){
   clearContents();
   const content = document.querySelector(".main-changing-content");
@@ -102,7 +103,7 @@ function dialog(){
   });
   const highPriorityLabel = document.createElement("label");
   highPriorityLabel.textContent = "High";
-  lowPriorityLabel.setAttribute("for", "high");
+  highPriorityLabel.setAttribute("for", "high");
   // section5
   const buttons = document.createElement("div");
   buttons.classList.add("buttonsflex");
@@ -159,5 +160,6 @@ function dialog(){
   buttons.appendChild(submitBtn);
   showDialog();
   closeDialog();
+  addTodo();
 };
 export {dialog}
