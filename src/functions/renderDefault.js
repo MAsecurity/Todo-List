@@ -1,4 +1,3 @@
-import "../style.css";
 import unDrawImg from "../images/icons/undrawImg.svg";
 function getRenderDefault(){
   // Add icons dependencies

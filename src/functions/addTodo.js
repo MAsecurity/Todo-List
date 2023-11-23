@@ -1,4 +1,5 @@
 import { Todo } from "./class";
+import { renderTodo } from "./renderTodo";
 let todoArray = [];
 function addTodo(){
   const submitBtn = document.querySelector(".submitbtn");
@@ -24,7 +25,7 @@ function addTodo(){
       }
       let newTodoObj = new Todo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice, status, project); 
       todoArray.push(newTodoObj);
-      console.log(todoArray);
+      renderTodo(todoArray);
     }
   });
   

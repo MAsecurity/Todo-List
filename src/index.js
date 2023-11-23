@@ -2,6 +2,7 @@
 //Create a dialog with the specific input values needed for a Todo object
 //Add those objects into the array.
 //Keep things from application logic seperate from DOM related stuff
+import './style.css';
 import { listen } from "./functions/listener";
 import { getRenderDefault } from "./functions/renderDefault";
 (function deploy(){
