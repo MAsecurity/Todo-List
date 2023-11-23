@@ -1,5 +1,3 @@
-import { SourceMapDevToolPlugin } from "webpack";
-
 class Todo{
   constructor(title, description, dueDate, priority, status, project){
     this.title = title;

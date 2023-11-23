@@ -76,7 +76,17 @@ function getRenderDefault(){
   sideBarProjectsIcon.textContent = "expand_circle_right";
   const sideBarProjectsStatus = document.createElement("span");
   sideBarProjectsStatus.textContent = "0";
-  sideBarProjectsStatus.classList.add("sidebar-projects-status")
+  sideBarProjectsStatus.classList.add("sidebar-projects-status");
+  const sideBarOverdue = document.createElement("div");
+  sideBarOverdue.classList.add("sidebar-overdue");
+  const sideBarOverdueTitle = document.createElement("span");
+  sideBarOverdueTitle.textContent = "Overdue";
+  const sideBarOverdueIcon = document.createElement("span");
+  sideBarOverdueIcon.classList.add("material-symbols-outlined");
+  sideBarOverdueIcon.textContent = "warning";
+  const sideBarOverdueStatus = document.createElement("span");
+  sideBarOverdueStatus.textContent = "0";
+  sideBarOverdueStatus.classList.add("sidebar-overdue-status");
   // Main content section
   const mainContent = document.createElement("div");
   mainContent.classList.add("main");
@@ -127,6 +137,10 @@ function getRenderDefault(){
   sideBarUpcomming.appendChild(sideBarUpcommingIcon);
   sideBarUpcomming.appendChild(sideBarUpcommingTitle);
   sideBarUpcomming.appendChild(sideBarUpcommingStatus);
+  sideBarFields.appendChild(sideBarOverdue);
+  sideBarOverdue.appendChild(sideBarOverdueIcon);
+  sideBarOverdue.appendChild(sideBarOverdueTitle);
+  sideBarOverdue.appendChild(sideBarOverdueStatus);
   sideBar.appendChild(sideBarProjects);
   sideBarProjects.appendChild(sideBarProjectsIcon);
   sideBarProjects.appendChild(sideBarProjectsTitle);
