@@ -1,7 +1,5 @@
-import { Todo } from "./class";
-import { renderTodo } from "./renderTodo";
-let todoArray = [];
-function addTodo(){
+import { addTodo } from "./logic/addTodo";
+function processOptions(){
   const submitBtn = document.querySelector(".submitbtn");
   const titleValue = document.querySelector("#title");
   const descriptionValue = document.querySelector("#description");
@@ -23,11 +21,8 @@ function addTodo(){
       }else if (highPriorityValue.checked){
         priorityChoice = highPriorityValue.value;
       }
-      let newTodoObj = new Todo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice, status, project); 
-      todoArray.push(newTodoObj);
-      renderTodo(todoArray);
     }
+    addTodo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice,status,project);
   });
-  
-}
-export { todoArray, addTodo};
+};
+export {processOptions};

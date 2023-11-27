@@ -141,6 +141,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 5fr;
+  gap: 20px;
 }
 .main .create-task{
   grid-row-start: 1;
@@ -284,6 +285,21 @@ input[type="radio"]{
   opacity: 0.5;
 }
 
+.list-of-todo{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 15px;
+}
+.card{
+  height: 250px;
+  background-color: #ddd6fe;
+  border-radius: 7px;
+  padding: 10px 30px;
+  display: grid;
+  border: #7c3aed 2px solid;
+  grid-template-rows: 2fr 1fr;
+  gap: 15px;
+}
 
 .main-container-img {
   display: flex;

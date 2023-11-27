@@ -1,0 +1,5 @@
+First request some options from user?
+  -title,description, duedate, project, priority,
+Now you should have processed these options and have a class object in array
+  -Loop over array of objects and add the necessary DOM things for rendering a Todo, project entered from user should exist in the sidebar
+  -You should then filter things accordingly , such as inbox will have all Todo objects, projects will have Todo objects that match the project name and so on.

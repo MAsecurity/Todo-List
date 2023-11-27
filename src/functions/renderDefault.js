@@ -106,7 +106,7 @@ function getRenderDefault(){
   const mainContainerImg = document.createElement("div");
   mainContainerImg.classList.add("main-container-img");
   const mainActualImg = document.createElement("img");
-  mainActualImg.style.cssText = "width:50%; height:50%"
+  mainActualImg.style.cssText = "width:50%; height:50% z-index: -100;"
   mainActualImg.src = unDrawImg;
   // Add DOM elements
   document.head.appendChild(linkMaterialIcons)

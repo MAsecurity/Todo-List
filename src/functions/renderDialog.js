@@ -1,9 +1,7 @@
-import { clearContents } from "./clear";
 import { closeDialog } from "./closeDialog";
 import { showDialog } from "./showDialog";
-import { addTodo } from "./addTodo";
+import { processOptions } from "./processOptions";
 function dialog(){
-  clearContents();
   const content = document.querySelector(".main-changing-content");
   const parentContainer = document.createElement("div");
   parentContainer.classList.add("dialog-container");
@@ -160,6 +158,6 @@ function dialog(){
   buttons.appendChild(submitBtn);
   showDialog();
   closeDialog();
-  addTodo();
+  processOptions();
 };
 export {dialog}
