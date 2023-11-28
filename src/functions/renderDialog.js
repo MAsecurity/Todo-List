@@ -61,7 +61,21 @@ function dialog(){
   const requriedStatus3 = document.createElement("span");
   requriedStatus3.textContent = "Required";
   requriedStatus3.classList.add("required-status");
-  // section4
+  // section4 project
+  const divSectionFour = document.createElement("div");
+  const divSectionFourForLabel = document.createElement("div");
+  divSectionFourForLabel.classList.add("div-for-label");
+  const projectLabel = document.createElement("label");
+  projectLabel.setAttribute("for","project");
+  projectLabel.textContent = "Project:"
+  projectLabel.style.cssText = "font-weight: bold;";
+  const project = document.createElement("input");
+  Object.assign(project,{
+    type: "text",
+    id: "project",
+    placeholder: "Not required"
+  });
+  // section5
   const fieldsetPriority = document.createElement("fieldset");
   const legendPriority = document.createElement("legend");
   legendPriority.textContent = "Priority:";
@@ -142,6 +156,11 @@ function dialog(){
   divSectionThreeForLabel.appendChild(requriedStatus3)
   divSectionThree.appendChild(dueDate);
   // section4
+  formElement.appendChild(divSectionFour);
+  divSectionFour.appendChild(divSectionFourForLabel);
+  divSectionFourForLabel.appendChild(projectLabel);
+  divSectionFour.appendChild(project);
+  // section5
   formElement.appendChild(fieldsetPriority);
   fieldsetPriority.appendChild(legendPriority);
   fieldsetPriority.appendChild(divLowPriority);

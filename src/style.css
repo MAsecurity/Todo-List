@@ -286,18 +286,26 @@ input[type="radio"]{
 }
 
 .list-of-todo{
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 15px; */
+  display: flex;
+  flex-direction: column;
   gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
 }
 .card{
-  height: 250px;
+  min-height: 100px;
+  width: 50%;
   background-color: #ddd6fe;
   border-radius: 7px;
   padding: 10px 30px;
   display: grid;
-  border: #7c3aed 2px solid;
-  grid-template-rows: 2fr 1fr;
+  border: #7c3aed 4px solid;
+  grid-template-rows: 1fr 1fr 3fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 15px;
 }
 

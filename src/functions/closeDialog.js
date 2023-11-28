@@ -1,8 +1,9 @@
 function closeDialog(){
+  const dialogEl = document.querySelector("#dialog");
   const cancelBtn = document.querySelector("#cancel");
   cancelBtn.addEventListener("click",()=>{
     event.preventDefault();
-    dialog.close()
+    dialogEl.close()
   })
 }
 export {closeDialog};

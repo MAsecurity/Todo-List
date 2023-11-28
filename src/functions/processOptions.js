@@ -7,6 +7,7 @@ function processOptions(){
   const lowPriorityValue = document.querySelector("#low");
   const mediumPriorityValue = document.querySelector("#medium");
   const highPriorityValue = document.querySelector("#high");
+  const projectValue = document.querySelector("#project");
   let priorityChoice;
   let status = "Not in progress";
   let project = "default";
@@ -21,8 +22,12 @@ function processOptions(){
       }else if (highPriorityValue.checked){
         priorityChoice = highPriorityValue.value;
       }
+      if (projectValue.value !== ''){
+        addTodo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice,status,projectValue.value);
+      }else{
+        addTodo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice,status,project);
+      }
     }
-    addTodo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice,status,project);
   });
 };
 export {processOptions};

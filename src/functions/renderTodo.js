@@ -9,6 +9,7 @@ function renderTodo(arrayOfObj){
     const todoCard = document.createElement("div")
     todoCard.classList.add("card");
     listOfTodo.appendChild(todoCard);
+    console.log(element.printObj());
 })
 }
 export {renderTodo};
