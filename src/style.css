@@ -297,7 +297,7 @@ input[type="radio"]{
   padding: 20px 0px;
 }
 .card{
-  min-height: 100px;
+  height: 100px;
   width: 50%;
   background-color: #ddd6fe;
   border-radius: 7px;
@@ -305,9 +305,10 @@ input[type="radio"]{
   display: grid;
   border: #7c3aed 4px solid;
   grid-template-rows: 1fr 1fr 3fr;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 4fr 1fr 2fr;
   gap: 15px;
 }
+
 
 .main-container-img {
   display: flex;
