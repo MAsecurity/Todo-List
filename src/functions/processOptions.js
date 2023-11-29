@@ -8,13 +8,14 @@ function processOptions(){
   const mediumPriorityValue = document.querySelector("#medium");
   const highPriorityValue = document.querySelector("#high");
   const projectValue = document.querySelector("#project");
+  const dialogEl = document.querySelector("#dialog");
   let priorityChoice;
   let status = "Not in progress";
   let project = "default";
   submitBtn.addEventListener("click", () => {
     event.preventDefault();
     if (titleValue.value !== '' && descriptionValue.value !== '' && dueDateValue.value !== ''){
-      dialog.close()
+      dialogEl.close()
       if (lowPriorityValue.checked){
         priorityChoice = lowPriorityValue.value;  
       }else if(mediumPriorityValue.checked){
