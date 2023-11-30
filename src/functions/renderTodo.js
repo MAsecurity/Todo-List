@@ -30,11 +30,42 @@ function renderTodo(arrayOfObj){
     const dateElement = document.createElement("div");
     dateElement.textContent = `${element.getDueDate()}`;
     dateElement.style.cssText = "font-weight: 15px; font-weight: bold; justify-self: end; color: #374151;  font-style:italic;"
+    const iconFields = document.createElement("div");
+    iconFields.classList.add("icon-fields");
+    const updateIconContainer = document.createElement("div");
+    updateIconContainer.classList.add("update-icon-container");
+    const showIconContainer = document.createElement("div");
+    showIconContainer.classList.add("show-icon-container");
+    const removeIconContainer = document.createElement("div");
+    removeIconContainer.classList.add("remove-icon-container");
+    const updateIcon = document.createElement("span");
+    updateIcon.classList.add("material-symbols-outlined");
+    updateIcon.style.cssText = "font-size: 30px; color: green;";
+    updateIcon.textContent = "edit";
+    updateIcon.setAttribute("index", `${index}`);
+    const showIcon = document.createElement("span");
+    showIcon.classList.add("material-symbols-outlined");
+    showIcon.style.cssText = "font-size: 30px; color: gray;";
+    showIcon.textContent = "feed";
+    showIcon.setAttribute("index", `${index}`);
+    const removeIcon = document.createElement("span");
+    removeIcon.classList.add("material-symbols-outlined");
+    removeIcon.style.cssText = "font-size: 30px; color: red;";
+    removeIcon.textContent = "delete";
+    removeIcon.setAttribute("index", `${index}`);
+
     listOfTodo.appendChild(todoCard);
     todoCard.appendChild(titleElement);
     todoCard.appendChild(iconContainer);
     iconContainer.appendChild(actualIconPriority);
     todoCard.appendChild(dateElement);
+    todoCard.appendChild(iconFields);
+    iconFields.appendChild(updateIconContainer);
+    updateIconContainer.appendChild(updateIcon);
+    iconFields.appendChild(showIconContainer);
+    showIconContainer.appendChild(showIcon)
+    iconFields.appendChild(removeIconContainer);
+    removeIconContainer.appendChild(removeIcon)
     console.log(element.printObj());
 })
 }

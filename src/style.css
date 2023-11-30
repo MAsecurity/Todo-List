@@ -297,7 +297,7 @@ input[type="radio"]{
   padding: 20px 0px;
 }
 .card{
-  height: 100px;
+  height: 110px;
   width: 50%;
   background-color: #ddd6fe;
   border-radius: 7px;
@@ -307,6 +307,25 @@ input[type="radio"]{
   grid-template-rows: 1fr 1fr 3fr;
   grid-template-columns: 4fr 1fr 2fr;
   gap: 15px;
+}
+
+.icon-fields{
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+.update-icon-container span, .show-icon-container span, .remove-icon-container span{
+  cursor: pointer;
+}
+.show-icon-container span:hover{
+  color: green !important;
+
+}
+.show-icon-container span:hover,.update-icon-container span:hover, .remove-icon-container span:hover{
+  font-size: 33px !important;
+
 }
 
 
