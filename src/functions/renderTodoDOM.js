@@ -25,7 +25,7 @@ function todoDOM(element, index){
   let elementDueDate = dates(element.getDueDate());
   const dateElement = document.createElement("div");
   dateElement.textContent = `${elementDueDate}`;
-  dateElement.style.cssText = "font-size: 10px; font-weight: bold; justify-self: end; color: #374151;  font-style:italic;"
+  dateElement.style.cssText = "font-size: 10px; font-weight: bold; justify-self: end; color: gray;  font-style:italic;"
   const iconFields = document.createElement("div");
   iconFields.classList.add("icon-fields");
   const updateIconContainer = document.createElement("div");
