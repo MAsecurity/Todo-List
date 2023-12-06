@@ -1,4 +1,5 @@
 import { dates } from "./sortDates";
+import { listenTodo } from "./renderTodoListener";
 function todoDOM(element, index){
   const listOfTodo = document.querySelector(".list-of-todo");
   const todoCard = document.createElement("div");
@@ -13,14 +14,11 @@ function todoDOM(element, index){
   actualIconPriority.classList.add("material-symbols-outlined");
   actualIconPriority.textContent = "circle";
   if (element.getPriority() == "low"){
-    console.log("low")
     actualIconPriority.style.cssText = "font-size: 20px; color:gray ;"
   }else if(element.getPriority() == "medium"){
     actualIconPriority.style.cssText = "font-size: 20px; color:yellow;"
-    console.log("medium");
   }else if (element.getPriority() == "high"){
     actualIconPriority.style.cssText = "font-size: 20px; color:red;";
-    console.log("high");
   }
   let elementDueDate = dates(element.getDueDate());
   const dateElement = document.createElement("div");
@@ -41,7 +39,7 @@ function todoDOM(element, index){
   updateIcon.setAttribute("index", `${index}`);
   const showIcon = document.createElement("span");
   showIcon.classList.add("material-symbols-outlined");
-  showIcon.style.cssText = "font-size: 30px; color: gray;";
+  showIcon.style.cssText = "font-size: 30px; color: #7c3aed;";
   showIcon.textContent = "feed";
   showIcon.setAttribute("index", `${index}`);
   const removeIcon = document.createElement("span");
@@ -62,6 +60,6 @@ function todoDOM(element, index){
   showIconContainer.appendChild(showIcon)
   iconFields.appendChild(removeIconContainer);
   removeIconContainer.appendChild(removeIcon)
-  console.log(element.printObj());
+  listenTodo();
 };
 export {todoDOM};

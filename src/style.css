@@ -174,7 +174,7 @@
 .dialog-container{
   position: relative;
 }
-#dialog {
+#dialog, #dialogProperties {
   width: 550px;
   height: 550px;
   position: absolute;
@@ -186,6 +186,10 @@
   outline: none;
   border-radius: 5px;
   margin-top: 6%;
+}
+
+#dialogProperties{
+  background-color: #ddd6fe;
 }
 
 #dialog form {
@@ -319,10 +323,7 @@ input[type="radio"]{
 .update-icon-container span, .show-icon-container span, .remove-icon-container span{
   cursor: pointer;
 }
-.show-icon-container span:hover{
-  color: green !important;
 
-}
 .show-icon-container span:hover,.update-icon-container span:hover, .remove-icon-container span:hover{
   font-size: 33px !important;
 
