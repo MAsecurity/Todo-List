@@ -4,9 +4,10 @@ function listenTodo(){
   const infos = document.querySelectorAll(".show-icon-container span");
   const remove = document.querySelector(".remove-icon-container span");
   // Add some event listeners 
-  infos.forEach(info => {
+  infos.forEach(info=>{
     info.addEventListener("click", () => {
       renderInfoDialog(info.getAttribute("index"));
+     
     })
   })
 }

@@ -190,6 +190,8 @@
 
 #dialogProperties{
   background-color: #ddd6fe;
+  height: 400px;
+  
 }
 
 #dialog form {
@@ -250,7 +252,12 @@ input[type="radio"]{
   gap: 15px;
   margin-top: 15px;
 }
-.buttonsflex button{
+.closeBtnContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.buttonsflex button, .closeBtnContainer .closebtn{
   width: 120px;
   height: 40px;
   border-radius: 3px;
@@ -258,14 +265,14 @@ input[type="radio"]{
   font-weight: bold;
   cursor: pointer;
 }
-.cancelbtn{
+.cancelbtn, .closebtn{
   background-color: black;
   color: #f5f3ff;
   border: none;
   transition: 0.15s;
 
 }
-.cancelbtn:hover {
+.cancelbtn:hover ,.closebtn:hover {
   color: black;
   background-color:  #f5f3ff;
   border: 2px solid black;
@@ -285,7 +292,7 @@ input[type="radio"]{
   opacity: 0.8;
 }
 
-.cancelbtn:active,.submitbtn:active {
+.cancelbtn:active,.submitbtn:active, .closebtn:active {
   opacity: 0.5;
 }
 
@@ -329,7 +336,12 @@ input[type="radio"]{
 
 }
 
-
+.property-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
 .main-container-img {
   display: flex;
   justify-content: center;
