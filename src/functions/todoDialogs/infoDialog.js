@@ -1,6 +1,7 @@
 import { showInfoDialog } from "./showInfoDialog";
 import { todoArray } from "../logic/addTodo";
 import { updateInfoDialog } from "./updateInfoDialog";
+import { closeInfoDialog } from "./closeInfoDialog";
 function renderInfoDialog(index){
   const content = document.querySelector(".main-changing-content");
   const parentContainer = document.createElement("div");
@@ -116,5 +117,6 @@ function renderInfoDialog(index){
   closeBtnContainer.appendChild(closeBtn);
   showInfoDialog();
   updateInfoDialog(index);
+  closeInfoDialog();
 }
 export{renderInfoDialog};
