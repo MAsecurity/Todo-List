@@ -1,4 +1,4 @@
-import { dates } from "./sortDates";
+import { dates } from "./logic/sortDates";
 import { listenTodo } from "./renderTodoListener";
 function todoDOM(element, index){
   const listOfTodo = document.querySelector(".list-of-todo");

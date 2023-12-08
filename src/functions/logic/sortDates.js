@@ -9,6 +9,7 @@ function dates(date){
   dates.push(new Date(date));
   let currentDate = dates.sort(compareAsc);
   return currentDate;
+  
   //=> [
   //   Wed Feb 11 1987 00:00:00,
   //   Mon Jul 10 1989 00:00:00,
