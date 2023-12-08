@@ -1,9 +1,10 @@
 import { showInfoDialog } from "./showInfoDialog";
 import { todoArray } from "../logic/addTodo";
-import { updateInfoDialog } from "./updateInfoDialog";
 import { closeInfoDialog } from "./closeInfoDialog";
 import { dates } from "../logic/sortDates";
+import { clearTodoDialog } from "./clearTodoDialog";
 function renderInfoDialog(index){
+  clearTodoDialog()
   const content = document.querySelector(".main-changing-content");
   const parentContainer = document.createElement("div");
   parentContainer.classList.add("dialog-container");
@@ -118,7 +119,6 @@ function renderInfoDialog(index){
   propertyContainer.appendChild(closeBtnContainer);
   closeBtnContainer.appendChild(closeBtn);
   showInfoDialog();
-  updateInfoDialog(index);
   closeInfoDialog();
 }
 export{renderInfoDialog};
