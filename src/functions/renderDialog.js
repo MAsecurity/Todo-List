@@ -1,7 +1,9 @@
 import { closeDialog } from "./closeDialog";
 import { showDialog } from "./showDialog";
 import { processOptions } from "./processOptions";
+import { clearTodoDialog } from "./todoDialogs/clearTodoDialog";
 function dialog(){
+  clearTodoDialog();
   const content = document.querySelector(".main-changing-content");
   const parentContainer = document.createElement("div");
   parentContainer.classList.add("dialog-container");
