@@ -17,7 +17,23 @@ function priorityChecks(index){
     })
   }
 }
-function statusChecks(){
+function statusChecks(index){
+  if (todoArray[index].getStatus() == "Not in progress"){
+    const notInProgressEl = document.querySelector("#not-in-progress");
+    Object.assign(notInProgressEl,{
+      checked: "checked"
+    })
+  }else if (todoArray[index].getStatus() == "In progress"){
+    const progressEl = document.querySelector("#progress");
+    Object.assign(progressEl,{
+      checked: "checked"
+    })
+  }else if (todoArray[index].getStatus() == "Completed"){
+    const completedEl = document.querySelector("#completed");
+    Object.assign(completedEl,{
+      checked: "checked"
+    })
+  }
 
 }
 export {priorityChecks, statusChecks};

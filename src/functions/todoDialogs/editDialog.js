@@ -3,6 +3,7 @@ import { todoArray } from "../logic/addTodo";
 import { showEditDialog } from "./showEditDialog";
 import { closeEditDialog } from "./closeEditDialog";
 import { priorityChecks } from "./checkEditDialog";
+import { updateTodo } from "./updateEditDialog";
 function update(index){
   clearTodoDialog()
   const content = document.querySelector(".main-changing-content");
@@ -123,7 +124,48 @@ function update(index){
   const highPriorityLabel = document.createElement("label");
   highPriorityLabel.textContent = "High";
   highPriorityLabel.setAttribute("for", "high");
-  // section5
+  // section6
+  const fieldsetStatus = document.createElement("fieldset");
+  const legendStatus = document.createElement("legend");
+  legendStatus.textContent = "Status:";
+  // Not in Progress
+  const divStatusNotInProgress = document.createElement("div");
+  const notInProgress = document.createElement("input");
+  Object.assign(notInProgress,{
+    type: "radio",
+    name: "status",
+    value: "Not-in-progress",
+    id: "not-in-progress",
+    checked: "checked"
+  });
+  const notInProgressLabel = document.createElement("label");
+  notInProgressLabel.textContent = "Not in progress";
+  notInProgressLabel.setAttribute("for", "not-in-progress");
+  // Progress
+  const divStatusProgress = document.createElement("div");
+  const progress = document.createElement("input");
+  Object.assign(progress,{
+    type: "radio",
+    name: "status",
+    value: "progress",
+    id: "progress"
+  });
+  const progressLabel = document.createElement("label");
+  progressLabel.textContent = "In progress";
+  progressLabel.setAttribute("for", "progress");
+  // completed
+  const divStatusCompleted = document.createElement("div");
+  const completed = document.createElement("input");
+  Object.assign(completed,{
+    type: "radio",
+    name: "status",
+    value: "completed",
+    id: "completed"
+  });
+  const completedLabel = document.createElement("label");
+  completedLabel.textContent = "Completed";
+  completedLabel.setAttribute("for", "completed");
+  // section7
   const buttons = document.createElement("div");
   buttons.classList.add("buttonsflex");
   const cancelBtn = document.createElement("button");
@@ -179,12 +221,25 @@ function update(index){
   fieldsetPriority.appendChild(divHighPriority);
   divHighPriority.appendChild(highPriority);
   divHighPriority.appendChild(highPriorityLabel);
+  // section6
+  formElement.appendChild(fieldsetStatus);
+  fieldsetStatus.appendChild(legendStatus);
+  fieldsetStatus.appendChild(divStatusNotInProgress);
+  divStatusNotInProgress.appendChild(notInProgress);
+  divStatusNotInProgress.appendChild(notInProgressLabel);
+  fieldsetStatus.appendChild(divStatusProgress);
+  divStatusProgress.appendChild(progress);
+  divStatusProgress.appendChild(progressLabel);
+  fieldsetStatus.appendChild(divStatusCompleted);
+  divStatusCompleted.appendChild(completed);
+  divStatusCompleted.appendChild(completedLabel);
 
   formElement.appendChild(buttons);
   buttons.appendChild(cancelBtn);
   buttons.appendChild(submitBtn);
   priorityChecks(index);
   showEditDialog();
+  updateTodo(index);
   closeEditDialog();
 
 }
