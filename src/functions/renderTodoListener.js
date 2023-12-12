@@ -1,9 +1,10 @@
 import { renderInfoDialog } from "./todoDialogs/infoDialog";
 import { update } from "./todoDialogs/editDialog";
+import { remove } from "./remove";
 function listenTodo(){
   const updates = document.querySelectorAll(".update-icon-container span");
   const infos = document.querySelectorAll(".show-icon-container span");
-  const remove = document.querySelector(".remove-icon-container span");
+  const removes = document.querySelectorAll(".remove-icon-container span");
   // Add some event listeners 
   infos.forEach(info=>{
     info.addEventListener("click", () => {
@@ -14,8 +15,8 @@ function listenTodo(){
   updates.forEach(element=>{
     element.addEventListener("click",() =>{
       update(element.getAttribute("index"));
-
     });
   });
 }
-export {listenTodo}
+
+export {listenTodo};

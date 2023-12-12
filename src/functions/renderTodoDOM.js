@@ -1,5 +1,6 @@
 import { dates } from "./logic/sortDates";
 import { listenTodo } from "./renderTodoListener";
+import { remove } from "./remove";
 function todoDOM(element, index){
   const listOfTodo = document.querySelector(".list-of-todo");
   const todoCard = document.createElement("div");
