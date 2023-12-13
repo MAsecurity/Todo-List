@@ -1,6 +1,7 @@
 import { dates } from "./logic/sortDates";
-import { listenTodo } from "./renderTodoListener";
 import { remove } from "./remove";
+import { update } from "./todoDialogs/editDialog";
+import { renderInfoDialog } from "./todoDialogs/infoDialog";
 function todoDOM(element, index){
   const listOfTodo = document.querySelector(".list-of-todo");
   const todoCard = document.createElement("div");
@@ -38,16 +39,25 @@ function todoDOM(element, index){
   updateIcon.style.cssText = "font-size: 30px; color: green;";
   updateIcon.textContent = "edit";
   updateIcon.setAttribute("index", `${index}`);
+  updateIcon.onclick = () => {
+    update(index);
+  }
   const showIcon = document.createElement("span");
   showIcon.classList.add("material-symbols-outlined");
   showIcon.style.cssText = "font-size: 30px; color: #7c3aed;";
   showIcon.textContent = "feed";
   showIcon.setAttribute("index", `${index}`);
+  showIcon.onclick = () => {
+    renderInfoDialog(index);
+  }
   const removeIcon = document.createElement("span");
   removeIcon.classList.add("material-symbols-outlined");
   removeIcon.style.cssText = "font-size: 30px; color: red;";
   removeIcon.textContent = "delete";
   removeIcon.setAttribute("index", `${index}`);
+  removeIcon.onclick = () => {
+    remove(index);
+  }
   // Add DOM elements
   listOfTodo.appendChild(todoCard);
   todoCard.appendChild(titleElement);
@@ -60,7 +70,6 @@ function todoDOM(element, index){
   iconFields.appendChild(showIconContainer);
   showIconContainer.appendChild(showIcon)
   iconFields.appendChild(removeIconContainer);
-  removeIconContainer.appendChild(removeIcon)
-  listenTodo();
+  removeIconContainer.appendChild(removeIcon);
 };
 export {todoDOM};
