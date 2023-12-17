@@ -1,4 +1,6 @@
 import unDrawImg from "../images/icons/undrawImg.svg";
+import { renderInbox } from "./renderInbox";
+import { renderToday } from "./renderToday";
 function getRenderDefault(){
   // Add icons dependencies
   const linkMaterialIcons = document.createElement("link");
@@ -39,6 +41,9 @@ function getRenderDefault(){
   sideBarFields.classList.add("sidebar-fields");
   const sideBarInbox = document.createElement("div");
   sideBarInbox.classList.add("sidebar-inbox")
+  sideBarInbox.onclick = () => {
+    renderInbox();
+  }
   const sideBarInboxTitle = document.createElement("span");
   sideBarInboxTitle.textContent = "Inbox";
   const sideBarInboxIcon = document.createElement("span");
@@ -48,6 +53,9 @@ function getRenderDefault(){
   sideBarInboxStatus.classList.add("sidebar-inbox-status");
   sideBarInboxStatus.textContent = "0";
   const sideBarToday = document.createElement("div");
+  sideBarToday.onclick = () =>{
+    renderToday();
+  }
   sideBarToday.classList.add("sidebar-today");
   const sideBarTodayTitle = document.createElement("span");
   sideBarTodayTitle.textContent = "Today";

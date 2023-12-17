@@ -2,6 +2,7 @@ import { clearContents } from "./clear";
 import { container } from "./renderTodoContainer";
 import { todoDOM } from "./renderTodoDOM";
 import { inboxNumber } from "./renderInbox";
+import { todayNumber } from "./renderToday";
 function renderTodo(arrayOfObj){
   clearContents()
   // Container DOM elements
@@ -11,5 +12,6 @@ function renderTodo(arrayOfObj){
     todoDOM(element, index);
   })
   inboxNumber();
+  todayNumber();
 }
 export {renderTodo};
