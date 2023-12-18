@@ -4,6 +4,7 @@ import { showEditDialog } from "./showEditDialog";
 import { closeEditDialog } from "./closeEditDialog";
 import { priorityChecks } from "./checkEditDialog";
 import { updateTodo } from "./updateEditDialog";
+import { statusChecks } from "./checkEditDialog";
 function update(index){
   clearTodoDialog()
   const content = document.querySelector(".main-changing-content");
@@ -238,6 +239,7 @@ function update(index){
   buttons.appendChild(cancelBtn);
   buttons.appendChild(submitBtn);
   priorityChecks(index);
+  statusChecks(index)
   showEditDialog();
   updateTodo(index);
   closeEditDialog();

@@ -11,4 +11,19 @@ function today (){
   return newArray
 
 }
-export {today}
+function upcomming(){
+  let currentDate = new Date();
+  let fullDate =  currentDate.setHours(0,0,0,0)
+  let newArray = [];
+  todoArray.forEach( (element,index)=> {
+    if (new Date(element.getDueDate()) > fullDate ){
+      newArray.push(index);
+    }else{
+      console.log("Current Date: "+fullDate+" Class element: "+new Date(element.getDueDate()));
+    }
+  });
+  return newArray
+
+
+}
+export {today, upcomming}

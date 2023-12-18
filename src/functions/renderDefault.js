@@ -1,6 +1,8 @@
 import unDrawImg from "../images/icons/undrawImg.svg";
 import { renderInbox } from "./renderInbox";
 import { renderToday } from "./renderToday";
+import { renderUpcomming } from "./renderUpcomming";
+import { renderCompleted } from "./renderCompleted";
 function getRenderDefault(){
   // Add icons dependencies
   const linkMaterialIcons = document.createElement("link");
@@ -66,6 +68,9 @@ function getRenderDefault(){
   sideBarTodayStatus.classList.add("sidebar-today-status");
   sideBarTodayStatus.textContent = "0";
   const sideBarUpcomming = document.createElement("div");
+  sideBarUpcomming.onclick = () => {
+    renderUpcomming();
+  }
   sideBarUpcomming.classList.add("sidebar-upcomming");
   const sideBarUpcommingTitle = document.createElement("span");
   sideBarUpcommingTitle.textContent = "Upcomming";
@@ -86,6 +91,9 @@ function getRenderDefault(){
   sideBarProjectsStatus.textContent = "0";
   sideBarProjectsStatus.classList.add("sidebar-projects-status");
   const sideBarCompleted = document.createElement("div");
+  sideBarCompleted.onclick = () => {
+    renderCompleted();
+  };
   sideBarCompleted.classList.add("sidebar-complete");
   const sideBarCompletedTitle = document.createElement("span");
   sideBarCompletedTitle.textContent = "Completed";

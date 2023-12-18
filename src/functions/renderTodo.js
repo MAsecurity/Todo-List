@@ -3,6 +3,8 @@ import { container } from "./renderTodoContainer";
 import { todoDOM } from "./renderTodoDOM";
 import { inboxNumber } from "./renderInbox";
 import { todayNumber } from "./renderToday";
+import { upcommingNumber } from "./renderUpcomming";
+import { completedNumber } from "./renderCompleted";
 function renderTodo(arrayOfObj){
   clearContents()
   // Container DOM elements
@@ -13,5 +15,7 @@ function renderTodo(arrayOfObj){
   })
   inboxNumber();
   todayNumber();
+  upcommingNumber();
+  completedNumber();
 }
 export {renderTodo};

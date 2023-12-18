@@ -6,7 +6,10 @@ function todoDOM(element, index){
   const listOfTodo = document.querySelector(".list-of-todo");
   const todoCard = document.createElement("div");
   todoCard.classList.add("card");
-  todoCard.setAttribute("index",`${index}`)
+  todoCard.setAttribute("index",`${index}`);
+  if(element.getStatus() == "Completed"){
+    todoCard.style.cssText = "border: #16a34a 4px solid ;"
+  }
   const titleElement = document.createElement("div");
   titleElement.textContent = `${element.getTitle()}`;
   titleElement.style.cssText = "font-size: 20px;  font-weight:bold;";
