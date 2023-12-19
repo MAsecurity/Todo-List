@@ -9,6 +9,8 @@ function todoDOM(element, index){
   todoCard.setAttribute("index",`${index}`);
   if(element.getStatus() == "Completed"){
     todoCard.style.cssText = "border: #16a34a 4px solid ;"
+  }else if(element.getStatus() == "In progress"){
+    todoCard.style.cssText = "border: #ea580c 4px solid;"
   }
   const titleElement = document.createElement("div");
   titleElement.textContent = `${element.getTitle()}`;

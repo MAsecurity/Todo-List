@@ -5,6 +5,7 @@ import { inboxNumber } from "./renderInbox";
 import { todayNumber } from "./renderToday";
 import { upcommingNumber } from "./renderUpcomming";
 import { completedNumber } from "./renderCompleted";
+import { projectsNumber } from "./renderProjects";
 function renderTodo(arrayOfObj){
   clearContents()
   // Container DOM elements
@@ -17,5 +18,6 @@ function renderTodo(arrayOfObj){
   todayNumber();
   upcommingNumber();
   completedNumber();
+  projectsNumber();
 }
 export {renderTodo};
