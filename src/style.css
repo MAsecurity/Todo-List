@@ -100,7 +100,7 @@
   display: flex;
 }
 
-.sidebar-title-container,.sidebar-inbox, .sidebar-today, .sidebar-upcomming,.sidebar-complete,.sidebar-projects{
+.sidebar-title-container,.sidebar-inbox, .sidebar-today, .sidebar-upcomming,.sidebar-complete,.sidebar-projects,.new-project{
   color: white;
   font-weight: bold;
   gap: 5px;
@@ -108,7 +108,7 @@
 .sidebar-title-container span{
   font-size: 3rem;
 }
-.sidebar-inbox span, .sidebar-today span, .sidebar-upcomming span , .sidebar-projects span,.sidebar-complete span{
+.sidebar-inbox span, .sidebar-today span, .sidebar-upcomming span , .sidebar-projects span,.sidebar-complete span,.new-project span{
   font-size: 2rem;
 }
 .sidebar-fields{
@@ -126,12 +126,19 @@
   gap: 10px;
   cursor: pointer;
 }
-.sidebar-inbox:hover, .sidebar-today:hover,.sidebar-upcomming:hover,.sidebar-complete:hover,.sidebar-projects:hover{
+.sidebar-inbox:hover, .sidebar-today:hover,.sidebar-upcomming:hover,.sidebar-complete:hover,.sidebar-projects:hover, .new-project:hover{
   opacity: 0.8;
 }
-.sidebar-inbox-status,.sidebar-today-status,.sidebar-upcomming-status, .sidebar-projects-status,.sidebar-complete-status{
+.sidebar-inbox-status,.sidebar-today-status,.sidebar-upcomming-status, .sidebar-projects-status,.sidebar-complete-status, .new-project-status{
   opacity: 0.6;
   justify-self: end;
+}
+.new-project{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-column: 2 / -1;
+  gap: 10px;
+  cursor: pointer;
 }
 .main{
   grid-column-start: 2;

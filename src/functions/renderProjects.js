@@ -1,7 +1,11 @@
 import { filterProjects } from "./logic/filterProjects";
 function projects(){
   const checkSideBarIcon = document.querySelector(".sidebar-projects .material-symbols-outlined");
-  checkSideBarIcon.textContent = (checkSideBarIcon.textContent == 'expand_circle_right') ? checkSideBarIcon.textContent = 'expand_circle_down': checkSideBarIcon.textContent= 'expand_circle_right'; 
+  if (checkSideBarIcon.textContent == 'expand_circle_right'){
+    renderProjectFields()
+  }else{
+    clearProjectFields()
+  }
 }
 function projectsNumber(){
   let newArr = filterProjects();
@@ -9,6 +13,11 @@ function projectsNumber(){
   projectStatus.textContent = `${newArr.length}`;
 }
 function renderProjectFields(){
-
+  const checksideBarIconForRender = document.querySelector(".sidebar-projects .material-symbols-outlined");
+  checksideBarIconForRender.textContent = 'expand_circle_down';
+}
+function clearProjectFields(){
+  const checkSideBarIconForClearing = document.querySelector(".sidebar-projects .material-symbols-outlined");
+  checkSideBarIconForClearing.textContent= 'expand_circle_right';
 }
 export{projects, projectsNumber}
