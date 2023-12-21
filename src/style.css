@@ -93,7 +93,7 @@
   padding: 20px 20px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 4fr;
+  grid-template-rows: 1fr 1fr 2fr;
   gap: 10%;
 }
 .sidebar-title-container{
@@ -125,6 +125,7 @@
   grid-template-columns: 1fr 1fr 5fr;
   gap: 10px;
   cursor: pointer;
+
 }
 .sidebar-inbox:hover, .sidebar-today:hover,.sidebar-upcomming:hover,.sidebar-complete:hover,.sidebar-projects:hover, .new-project:hover{
   opacity: 0.8;
@@ -139,6 +140,7 @@
   grid-column: 2 / -1;
   gap: 10px;
   cursor: pointer;
+  
 }
 .main{
   grid-column-start: 2;

@@ -1,4 +1,5 @@
 import { filterProjects } from "./logic/filterProjects";
+import { projectsDom } from "./renderProjectFieldsDOM";
 function projects(){
   const checkSideBarIcon = document.querySelector(".sidebar-projects .material-symbols-outlined");
   if (checkSideBarIcon.textContent == 'expand_circle_right'){
@@ -15,9 +16,17 @@ function projectsNumber(){
 function renderProjectFields(){
   const checksideBarIconForRender = document.querySelector(".sidebar-projects .material-symbols-outlined");
   checksideBarIconForRender.textContent = 'expand_circle_down';
+  let newArr = filterProjects();
+  newArr.forEach(element => {
+    projectsDom(element);
+  })
 }
 function clearProjectFields(){
   const checkSideBarIconForClearing = document.querySelector(".sidebar-projects .material-symbols-outlined");
   checkSideBarIconForClearing.textContent= 'expand_circle_right';
+  const newProjectField = document.querySelectorAll(".new-project");
+  newProjectField.forEach(project => {
+    project.remove()
+  });
 }
 export{projects, projectsNumber}

@@ -11,3 +11,4 @@ function projectsDom(projectName){
   newProject.appendChild(newProjectTitle);
   newProject.appendChild(newProjectStatus);
 }
+export {projectsDom};
