@@ -1,5 +1,10 @@
 import { filterProjects } from "./logic/filterProjects";
 import { projectsDom } from "./renderProjectFieldsDOM";
+import { todoArray } from "./logic/addTodo";
+import { clearContents } from "./clear";
+import { container } from "./renderTodoContainer";
+import { todoDOM } from "./renderTodoDOM";
+import { filterProjectsByName } from "./logic/filterProjects";
 function projects(){
   const checkSideBarIcon = document.querySelector(".sidebar-projects .material-symbols-outlined");
   if (checkSideBarIcon.textContent == 'expand_circle_right'){
@@ -19,7 +24,29 @@ function renderProjectFields(){
   let newArr = filterProjects();
   newArr.forEach(element => {
     projectsDom(element);
-  })
+    renderSubProjectFields(element);
+  });
+
+}
+function renderSubProjectFields(element){
+  let newArray = filterProjectsByName(element)
+  const projectStatus = document.querySelector(`#${element}-status`)
+  projectStatus.textContent = `${newArray.length}`;
+  const projects = document.querySelector(`#${element}`)
+  projects.onclick = () => {
+    clearContents();
+    container();
+    newArray.forEach(filteredIndex=> {
+      todoDOM(todoArray[filteredIndex], filteredIndex);
+    })
+  }
+}
+function updateSubProjects(){
+  const checksideBarIconForRender = document.querySelector(".sidebar-projects .material-symbols-outlined");
+  if(checksideBarIconForRender.textContent == "expand_circle_down"){
+    clearProjectFields()
+    renderProjectFields()
+  }
 }
 function clearProjectFields(){
   const checkSideBarIconForClearing = document.querySelector(".sidebar-projects .material-symbols-outlined");
@@ -29,4 +56,4 @@ function clearProjectFields(){
     project.remove()
   });
 }
-export{projects, projectsNumber}
+export{projects, projectsNumber, renderSubProjectFields, updateSubProjects}

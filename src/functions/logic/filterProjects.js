@@ -12,4 +12,13 @@ function filterProjects(){
   });
   return newArray;
 }
-export{filterProjects}
+function filterProjectsByName(element){
+  let newArray = [];
+  todoArray.forEach((obj,index) => {
+    if(obj.getProject() == element){
+      newArray.push(index)
+    }
+  });
+  return newArray;
+}
+export{filterProjects, filterProjectsByName}
