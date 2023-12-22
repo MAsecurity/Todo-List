@@ -58,6 +58,7 @@
   font-size: 18px;
   outline: none;
   width: 80%;
+  cursor: pointer;
 }
 .searchbar:focus{
   border: 2px solid #4995ec;
