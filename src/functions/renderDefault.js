@@ -3,6 +3,7 @@ import { renderInbox } from "./renderInbox";
 import { renderToday } from "./renderToday";
 import { renderUpcomming } from "./renderUpcomming";
 import { renderCompleted } from "./renderCompleted";
+import { renderSearch } from "./renderSearch";
 function getRenderDefault(){
   // Add icons dependencies
   const linkMaterialIcons = document.createElement("link");
@@ -25,6 +26,10 @@ function getRenderDefault(){
   searchIconImg.classList.add("material-symbols-outlined")
   searchIconImg.textContent = "search";
   const searchBarBtn = document.createElement("button");
+  searchBarBtn.setAttribute("id", "search-bar-btn")
+  searchBarBtn.onclick = () => {
+    renderSearch();
+  }
   const navBarRight = document.createElement("div");
   navBarRight.classList.add("nav-content-right");
   const navBarTitle = document.createElement("div");
