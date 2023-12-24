@@ -30,9 +30,10 @@ function renderProjectFields(){
 }
 function renderSubProjectFields(element){
   let newArray = filterProjectsByName(element)
-  const projectStatus = document.querySelector(`#${element}-status`)
+  let splitProjectName = element.split(" ").join("-");
+  const projectStatus = document.querySelector(`#project-${splitProjectName}-status`)
   projectStatus.textContent = `${newArray.length}`;
-  const projects = document.querySelector(`#${element}`)
+  const projects = document.querySelector(`#project-${splitProjectName}`)
   projects.onclick = () => {
     clearContents();
     container();
