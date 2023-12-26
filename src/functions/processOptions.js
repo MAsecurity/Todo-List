@@ -24,7 +24,7 @@ function processOptions(){
         priorityChoice = highPriorityValue.value;
       }
       if (projectValue.value !== ''){
-        addTodo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice,status,projectValue.value);
+        addTodo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice,status,projectValue.value.trim());
       }else{
         addTodo(titleValue.value, descriptionValue.value, dueDateValue.value, priorityChoice,status,project);
       }
