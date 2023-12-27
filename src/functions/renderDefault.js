@@ -4,6 +4,10 @@ import { renderToday } from "./renderToday";
 import { renderUpcomming } from "./renderUpcomming";
 import { renderCompleted } from "./renderCompleted";
 import { renderSearch } from "./renderSearch";
+import { localStorageAvailable, updateLocalStorage } from "./logic/localStorage";
+import { updateArray } from "./logic/localStorage";
+import { renderTodo } from "./renderTodo";
+import { todoArray } from "./logic/addTodo";
 function getRenderDefault(){
   // Add icons dependencies
   const linkMaterialIcons = document.createElement("link");
@@ -174,6 +178,14 @@ function getRenderDefault(){
   mainContent.appendChild(mainChangingContent);
   mainChangingContent.appendChild(mainContainerImg);
   mainContainerImg.appendChild(mainActualImg);
+  if(localStorageAvailable("localStorage")){
+    if(!localStorage.getItem("array")){
+      updateLocalStorage()
+    }else{
+      updateArray();
+      renderTodo(todoArray);
+    }
+  }
 
 };
 export {getRenderDefault};
