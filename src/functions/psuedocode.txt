@@ -1,9 +1,0 @@
-Inbox:
-  if inbox is clicked renderTodo should run, 
-Today:
-  if today is matching elements in renderTodo array, we must call a seperate function which calculates
-  if dates matching are the same , and if so update the today sidebar, and if its clicked create a filter array and update renderTodo
-Upcomming:
-  same thing as Today but check if dates are above current date
-Completed:
-  should look for elements that are completed and render them if clicked on.
