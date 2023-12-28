@@ -19,7 +19,7 @@ function upcomming(){
     if (new Date(element.getDueDate()) > fullDate ){
       newArray.push(index);
     }else{
-      console.log("Current Date: "+fullDate+" Class element: "+new Date(element.getDueDate()));
+      // Do nothing
     }
   });
   return newArray

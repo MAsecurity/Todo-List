@@ -2,6 +2,7 @@ import { closeDialog } from "./closeDialog";
 import { showDialog } from "./showDialog";
 import { processOptions } from "./processOptions";
 import { clearTodoDialog } from "./todoDialogs/clearTodoDialog";
+import { getCurrentDate } from "./logic/sortDates";
 function dialog(){
   clearTodoDialog();
   const content = document.querySelector(".main-changing-content");
@@ -60,6 +61,7 @@ function dialog(){
     id: "date",
     required: "required"
   });
+  dueDate.value = getCurrentDate()
   const requriedStatus3 = document.createElement("span");
   requriedStatus3.textContent = "Required";
   requriedStatus3.classList.add("required-status");
