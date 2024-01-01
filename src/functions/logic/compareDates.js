@@ -1,7 +1,7 @@
 import { todoArray } from "./addTodo";
+import { getCurrentDate } from "./sortDates";
 function today (){
-  let currentDate = new Date();
-  let fullDate = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`;
+  let fullDate = getCurrentDate();
   let newArray = [];
   todoArray.forEach( (element,index)=> {
     if (element.getDueDate() == fullDate ){
