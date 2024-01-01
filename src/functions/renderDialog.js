@@ -61,7 +61,7 @@ function dialog(){
     id: "date",
     required: "required"
   });
-  dueDate.value = getCurrentDate()
+  dueDate.value = getCurrentDate();
   const requriedStatus3 = document.createElement("span");
   requriedStatus3.textContent = "Required";
   requriedStatus3.classList.add("required-status");
