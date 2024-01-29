@@ -17,3 +17,6 @@ This project is about creating a Todo-list that allows users to create reminders
 
 ## Dependencies
 Quick tip: Dependencies can be installed from the package.json file by running npm install.
+```properties
+npm install
+```
