@@ -11,7 +11,7 @@ function processOptions(){
   const dialogEl = document.querySelector("#dialog");
   let priorityChoice;
   let status = "Not in progress";
-  let project = "default";
+  let project = "Default";
   submitBtn.addEventListener("click", () => {
     event.preventDefault();
     if (titleValue.value !== '' && descriptionValue.value !== '' && dueDateValue.value !== ''){
