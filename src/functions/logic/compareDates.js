@@ -16,7 +16,7 @@ function upcomming(){
   let fullDate =  currentDate.setHours(0,0,0,0)
   let newArray = [];
   todoArray.forEach( (element,index)=> {
-    if (new Date(element.getDueDate()) > fullDate ){
+    if (new Date(element.getDueDate()).setHours(0,0,0,0) > fullDate ){
       newArray.push(index);
     }else{
       // Do nothing
